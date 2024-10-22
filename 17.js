@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //เพิ่มitem
     addItem.addEventListener("click", () => {
-        const addId = productinput.value.trim(); // แก้ไขจาก addI เป็น addId
+        const addId = productinput.value.trim(); 
         const addPrice = Number(priceInput.value.trim());
         const addImge = imgeinput.value.trim();
 
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function renderTasks(a) {
-        //add
         cartItemlist.innerHTML = ""
         a.forEach((task) => {
 
@@ -63,9 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function deleteTask(id) {
-        // ลบรายการออกจากลิสต์
+       
         allEverything = allEverything.filter((task) => task.id !== id);
-        renderTasks(allEverything); // อัพเดตลิสต์ใหม่
+        renderTasks(allEverything); 
     }
 
 
