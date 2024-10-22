@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //เพิ่มitem
     addItem.addEventListener("click", () => {
-        const addId = productinput.value.trim(); 
+        const addId = productinput.value.trim(); //
         const addPrice = Number(priceInput.value.trim());
         const addImge = imgeinput.value.trim();
 
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function renderTasks(a) {
+        //add
         cartItemlist.innerHTML = ""
         a.forEach((task) => {
 
@@ -50,9 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
             price: ${task.price}$ 
          <img src="${task.img}" alt="${task.name}" style="width: 150px; height: auto;"></img> 
          </div>`;
-
-          const deleteBtn =  document.createElement("Button")
-          deleteBtn.textContent = "Delete";
+                //สร้างปุ่ม remove
+          const deleteBtn =  document.createElement("button")
+          deleteBtn.textContent = "Remove";
           deleteBtn.addEventListener("click", () => {deleteTask(task.id)});
             taskItem.appendChild(deleteBtn)
             
@@ -60,11 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
+        
     function deleteTask(id) {
-       
         allEverything = allEverything.filter((task) => task.id !== id);
-        renderTasks(allEverything); 
+        renderTasks(allEverything);
     }
 
 
